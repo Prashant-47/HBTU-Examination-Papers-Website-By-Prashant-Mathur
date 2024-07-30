@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ===( Prashat Mathur)=== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HBTU-MCA Examination Papers</title>
+    <link rel="icon" href="img/mainimg.png" type="image/x-icon">
+    <!-- === Custom CSS === -->
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/logo.png" alt="">
+            <div class="university-details">
+                <span class="university-name">Harcourt Butler Technical University</span>
+                <span class="university-address">Nawabganj, Kanpur - Uttar Pradesh</span>
+            </div>
+        </div>
+        <div class="neon-effect"></div>
+        <div class="nav active">
+            <div class="close">
+                <img src="img/cross.png" alt="">
+            </div>
+            <ul>
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="developer.html">Developer</a></li>
+                <li><a href="login.html">Login/Signup</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="menu">
+            <img src="img/menu.png" alt="">
+        </div>
+    </header>
+    <div class="container">
+        <div class="parent">
+            <div class="card">
+                <div class="content-box">
+                    <h1 class="card-title">First Semester Examination</h1>
+                    <p class="card-content">
+                        Our repository comprises both Mid-Semester and End-Semester Examination Papers. Mid-Semester assessments carry a weightage of 15 marks each, while End-Semester examinations hold a higher weightage of 50 marks each
+                    </p>
+                    <span class="see-more"><a href="index.html">See More</a></span>
+                </div>
+                <div class="date-box">
+                    <span class="month">1st</span>
+                    <span class="date">SEM</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="parent card2">
+            <div class="card">
+                <div class="content-box">
+                    <h1 class="card-title">Second Semester Examination</h1>
+                    <p class="card-content">
+                        Our repository comprises both Mid-Semester and End-Semester Examination Papers. Mid-Semester assessments carry a weightage of 15 marks each, while End-Semester examinations hold a higher weightage of 50 marks each
+                    </p>
+                    <span class="see-more"><a href="index.html">See More</a></span>
+                </div>
+                <div class="date-box">
+                    <span class="month">2nd</span>
+                    <span class="date">SEM</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="parent card3">
+            <div class="card">
+                <div class="content-box">
+                    <h1 class="card-title">Third Semester Examination</h1>
+                    <p class="card-content">
+                        Our repository comprises both Mid-Semester and End-Semester Examination Papers. Mid-Semester assessments carry a weightage of 15 marks each, while End-Semester examinations hold a higher weightage of 50 marks each
+                    </p>
+                    <span class="see-more"><a href="index.html">See More</a></span>
+                </div>
+                <div class="date-box">
+                    <span class="month">3rd</span>
+                    <span class="date">SEM</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="parent card4">
+            <div class="card">
+                <div class="content-box">
+                    <h1 class="card-title">Forth Semester Examination</h1>
+                    <p class="card-content">
+                        Our repository comprises both Mid-Semester and End-Semester Examination Papers. Mid-Semester assessments carry a weightage of 15 marks each, while End-Semester examinations hold a higher weightage of 50 marks each
+                    </p>
+                    <span class="see-more"><a href="4sem.html">See More</a></span>
+                </div>
+                <div class="date-box">
+                    <span class="month">4th</span>
+                    <span class="date">SEM</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Made with ❤️ for future juniors of MCA @HBTU by Prashant Mathur.</p>
+    </footer>
+    <script src="jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.menu').click(function(){
+                $('.nav').removeClass('active');
+            });
+            $('.close').click(function(){
+                $('.nav').addClass('active');
+            });
+            $('.nav a').click(function(){
+                $('.nav li').removeClass('active');
+                $(this).parent().addClass('active');
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            let lastScrollTop = 0;
+            const header = document.querySelector("header");
+
+            window.addEventListener("scroll", function() {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                if (scrollTop > lastScrollTop) {
+                    // Scroll Down
+                    header.style.transform = "translateY(-100%)"; // Hide header
+                } else {
+                    // Scroll Up
+                    header.style.transform = "translateY(0)"; // Show header
+                }
+                lastScrollTop = scrollTop;
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            function checkScroll() {
+                const footer = document.querySelector('footer');
+                if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+                    footer.classList.add('show-footer');
+                } else {
+                    footer.classList.remove('show-footer');
+                }
+            }
+
+            window.addEventListener('scroll', checkScroll);
+            checkScroll();
+        });
+
+        // Hide footer on smartphones until end of page is reached
+        document.addEventListener('DOMContentLoaded', function() {
+            const footer = document.querySelector('footer');
+            footer.classList.add('hidden-footer'); // Initially hide footer on small screens
+
+            function checkScroll() {
+                if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+                    footer.classList.add('show-footer');
+                } else {
+                    footer.classList.remove('show-footer');
+                }
+            }
+
+            if (window.innerWidth <= 991) { // Check if device is a smartphone or tablet
+                window.addEventListener('scroll', checkScroll);
+                checkScroll();
+            }
+        });
+
+        window.addEventListener('scroll', function() {
+            var header = document.querySelector('header');
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > 50) {
+                header.style.transform = 'translateY(-100%)';
+                document.querySelector('.neon-effect').style.opacity = '1';
+            } else {
+                header.style.transform = 'translateY(0)';
+                document.querySelector('.neon-effect').style.opacity = '0';
+            }
+        });
+    </script>
+</body>
+</html>

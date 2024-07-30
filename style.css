@@ -1,0 +1,577 @@
+/* ===( Prashant Mathur )=== */
+@font-face {
+    font-family:"Jost-Regular";
+    src: url("font/Jost-Regular.ttf");
+}
+@font-face {
+    font-family:"Jost-Medium";
+    src: url("font/Jost-Medium.ttf");
+}
+@font-face {
+    font-family:"Jost-SemiBold";
+    src: url("font/Jost-SemiBold.ttf");
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header {
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Added to ensure header stays on top */
+    transition: transform 0.3s ease-in-out; /* Added transition for smooth sliding */
+    transform: translateY(0); /* Initial state */
+    flex-wrap: wrap; /* Allow wrapping for small screens */
+}
+/*University data Stars Here*/
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 80px;
+    object-fit: contain;
+    margin-top: 5%;
+}
+
+.university-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 20px; /* Adjust the margin as needed */
+}
+
+.university-name {
+    font-family: "Jost-Medium";
+    font-size: 30px;
+    color: #fff;
+}
+
+.university-address {
+    font-family: "Jost-Regular";
+    font-size: 18px;
+    color: #fff;
+    margin-top: 2px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width:1440px) {
+    .logo img {
+        width: 100px;
+    }
+    .university-name {
+        font-size: 20px;
+    }
+    .university-address {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width:1200px) {
+    .logo img {
+        width: 80px;
+    }
+    .university-name {
+        font-size: 18px;
+    }
+    .university-address {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width:991px) {
+    .university-name {
+        font-size: 16px;
+    }
+    .university-address {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width:650px) {
+    .logo img {
+        width: 60px;
+    }
+    .university-name {
+        font-size: 14px;
+    }
+    .university-address {
+        font-size: 8px;
+    }
+}
+/*University Name Section Ends here*/
+/* Explore Button Content*/
+.explore-button {
+    display: inline-block;
+    margin-top: 15px; /* Adjust the margin as needed */
+    padding: 10px 20px;
+    font-family: "Jost-Medium";
+    font-size: 18px;
+    color: #fff;
+    background: linear-gradient(45deg, #2e38b3, #1a649c);
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.explore-button:hover {
+    background: linear-gradient(45deg, #104064, #1995b4);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width:1440px) {
+    .explore-button {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width:1200px) {
+    .explore-button {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width:991px) {
+    .explore-button {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width:650px) {
+    .explore-button {
+        font-size: 10px;
+    }
+}
+@media screen and (max-width:740px) {
+    .explore-button {
+        font-size: 11px;
+    }
+}
+/* Explore Button Content Ends Here */
+.hero-section{
+    width: 100%;
+    height: 100vh;
+    background-image: url("img/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: -1;
+}
+.menu,.close{
+    display: none;
+}
+.nav ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Allow items to wrap */
+}
+.nav ul li{
+    font-family:"Jost-Medium";
+    font-weight: 500;
+    font-size: 20px;
+    color: #fff;
+    text-transform: capitalize;
+    margin-left: 50px;
+    cursor: pointer;
+    position: relative;
+    white-space: nowrap; /* Prevent wrapping */
+}
+.nav ul li::after{
+    content: '';
+    position: absolute;
+    top: -7px;
+    left: -4px;
+    border-bottom-right-radius: 30px;
+    border-top-left-radius: 30px;
+    background: linear-gradient(45deg, #2e38b3,#104064);
+    width: 0px;
+    height: 0px;
+    z-index: -1;
+    transition: .5;
+}
+.nav ul li:hover::after{
+    width: 40px;
+    height: 35px;
+}
+.hero-section h1{
+    font-family:"Jost-SemiBold";
+    font-weight: 600;
+    font-size: 75px;
+    line-height: 95px;
+    color: #fff;
+    width: 530px;
+    padding-bottom: 15px;
+    text-transform: capitalize;
+    position: relative;
+}
+.hero-section h1::after{
+    content: '';
+    position: absolute;
+    top: -61px;
+    right: 25px;
+    background-image: url("img/object.png");
+    background-repeat: no-repeat;
+    width: 165px;
+    height: 180px;
+}
+.hero-section p{
+    font-family:"Jost-Regular";
+    font-weight: 400;
+    font-size: 20px;
+    color: #fff;
+}
+.hero-img img{
+    height: 630px;
+    margin-top: 90px;
+    object-fit: contain;
+    animation: move 3s infinite alternate;
+}
+@keyframes move {
+    0%{
+        transform: translateY(10px);
+    }
+    100%{
+        transform: translateY(-10px);
+    }
+}
+
+/* responsive */
+
+/* laptop responsive- keep ur browser size in 1300px */
+@media screen and (max-width:1440px){
+    .logo img{
+        width: 100px;
+    }
+    .nav ul li{
+        font-size: 18px;
+    }
+    .hero-img img{
+        height: 420px;
+    }
+    .hero-section h1{
+        font-size: 60px;
+        line-height: 75px;
+        width: 460px;
+    }
+    .hero-section h1::after{
+        top: -58px;
+        right: 24px;
+    }
+}
+
+/* small size laptop responsive - keep ur browser size in 1024px */
+
+@media screen and (max-width:1200px){
+    .logo img{
+        width: 80px;
+    }
+    .nav ul li{
+        font-size: 16px;
+        margin-left: 20px; /* Adjusted for smaller screens */
+    }
+    .hero-img img{
+        height: 360px;
+    }
+    .hero-section h1{
+        font-size: 50px;
+        line-height: 65px;
+        width: 387px;
+    }
+    .hero-section h1::after{
+        top: -65px;
+        right: 10px;
+    }
+    .hero-section p{
+        font-size: 18px;
+    }
+    header{
+        padding: 20px 80px;
+    }
+    .hero-section{
+        padding: 0px 80px;
+    }
+}
+/* tablet responsive - keep ur browser size in 768px */
+
+@media screen and (max-width:991px){
+    .hero-section{
+        padding: 0px 50px ;
+    }
+    header{
+        padding: 20px 50px ;
+    }
+    .hero-section h1{
+        font-size: 40px;
+        line-height: 60px;
+        width: 320px;
+    }
+    .hero-section h1::after{
+        top: -60px;
+        right: 0px;
+        background-size: contain;
+    }
+    .hero-img img{
+        height: 300px;
+    }
+    .hero-section p{
+        font-size: 14px;
+    }
+    .menu{
+        display: block;
+    }
+    .close{
+        display: block;
+        z-index: 99;
+        position: absolute;
+        top: 30px;
+        left: 30px;
+    }
+    .nav.active{
+        right: -300px;
+    }
+    .nav{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 300px;
+        background-color: #07062c;
+        box-shadow: 0 40px 60px rgb(0 0 0 / 10%);
+        transition: .5s ease-in-out;
+    }
+    .nav ul{
+        flex-direction: column;
+    }
+    .nav ul li{
+        margin-left: 0px;
+        padding-bottom: 40px;
+    }
+}
+
+/* mobile responsive - keep ur browser size in 360px */
+
+@media screen and (max-width:650px){
+    header{
+        padding: 15px 25px;
+    }
+    .hero-section{
+        padding: 0px 25px;
+        flex-direction: column;
+        row-gap: 25px;
+    }
+    .hero-section h1{
+        font-size: 30px;
+        line-height: 45px;
+        width: 244px;
+        padding-bottom: 5px;
+    }
+    .hero-section h1::after{
+        top: -27px;
+        right: 15px;
+        width: 100px;
+        height: 100px;
+    }
+    .content{
+        margin-top: 100px;
+    }
+    .hero-img img{
+        width: 100%;
+        height: 100%;
+        margin-top: 0px;
+    }
+    .logo img{
+        width: 60px;
+    }
+}
+
+/* Footer styles */
+footer {
+    width: 100%;
+    padding: 20px;
+    background-color: transparent; /* Make background transparent */
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000; /* Ensure the footer stays on top */
+}
+
+footer p {
+    font-family: "Jost-Regular";
+    font-size: 18px;
+    color: #fff;
+}
+
+/* Responsive footer adjustments */
+@media screen and (max-width:1440px) {
+    footer p {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width:1200px) {
+    footer p {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width:991px) {
+    footer p {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width:650px) {
+    footer p {
+        font-size: 10px;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+  
+.nav a {
+    font-family: "Jost-Medium";
+    font-weight: 500;
+    font-size: 20px;
+    color: #fff;
+    text-transform: capitalize;
+    margin-left: 8px;
+    cursor: pointer;
+    position: relative;
+    line-height: your-button-height;
+    margin-right: 5px;
+    text-decoration: none;  /* Ensure this is set */
+    white-space: nowrap; /* Prevent wrapping */
+}
+  
+.nav a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    text-decoration: none;  /* Re-declare here for emphasis */
+}
+  
+.nav a:after {
+    content: '';
+    position: absolute;
+    top: -7px;
+    left: -4px;
+    border-bottom-right-radius: 30px;
+    border-top-left-radius: 30px;
+    background: linear-gradient(45deg, #2e38b3, #104064);
+    width: 0px;
+    height: 0px;
+    z-index: -1;
+    transition: .5s;
+    text-decoration: none;  /* Although unlikely to be necessary here */
+}
+  
+.nav a:hover:after {
+    opacity: 1; /* Show hover effect on hover */
+    text-decoration: none;
+}
+
+@media screen and (max-width:740px) {
+    header {
+        padding: 15px 25px;
+    }
+    .content {
+        margin-top: 100px;
+    }
+    .logo img {
+        width: 50px;
+       
+    }
+    .university-name {
+        font-size: 12px;
+    }
+    .university-address {
+        font-size: 10px;
+    }
+    .card {
+        margin-bottom: 20px;
+    }
+    
+    /* Navigation menu icon */
+    .menu {
+        display: block;
+    }
+    .close {
+        display: block;
+        z-index: 99;
+        position: absolute;
+        top: 30px;
+        left: 30px;
+    }
+    .nav.active {
+        right: -300px;
+    }
+    .nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 300px;
+        background-color: #07062c;
+        box-shadow: 0 40px 60px rgb(0 0 0 / 10%);
+        transition: 0.5s ease-in-out;
+    }
+    .nav ul {
+        flex-direction: column;
+    }
+    .nav ul li {
+        margin-left: 0px;
+        padding-bottom: 40px;
+    }
+    .hero-section{
+        padding: 0px 25px;
+        flex-direction: column;
+        row-gap: 25px;
+    }
+    .hero-section h1{
+        font-size: 30px;
+        line-height: 45px;
+        width: 244px;
+        padding-bottom: 10px;
+    }
+    .hero-section h1::after{
+        top: -27px;
+        right: 15px;
+        width: 100px;
+        height: 100px;
+    }
+    .content{
+        margin-top: 100px;
+    }
+    .hero-img img{
+        width: 100%;
+        height: 100%;
+        margin-top: 0px;
+    }
+    .logo img{
+        width: 60px;
+    }
+}
